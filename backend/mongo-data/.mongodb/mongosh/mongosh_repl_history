@@ -1,3 +1,0 @@
-db.managers.find().pretty()
-db.buildings.find().pretty()
-use smartentry7
