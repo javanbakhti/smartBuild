@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: smartentry7-mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: smartentry7
+      MONGO_INITDB_ROOT_PASSWORD: smartentry7pass
+      MONGO_INITDB_DATABASE: smartentry7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - smartentry7-net
+
+volumes:
+  mongo-data:
+
+networks:
+  smartentry7-net:
+    driver: bridge
+
